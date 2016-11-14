@@ -5,6 +5,8 @@ class Casting < ActiveRecord::Base
 
   # Validations
 
+  validates :actor_id, :presence => true
+
   validates :movie_id, :presence => true
 
 end
