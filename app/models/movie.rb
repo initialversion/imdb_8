@@ -9,6 +9,10 @@ class Movie < ActiveRecord::Base
 
   # Indirect associations
 
+  has_many   :actors,
+             :through => :characters,
+             :source => :actor
+
   # Validations
 
   validates :title, :uniqueness => { :scope => [:year, :director_id] }

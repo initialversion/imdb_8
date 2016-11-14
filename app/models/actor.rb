@@ -7,6 +7,10 @@ class Actor < ActiveRecord::Base
 
   # Indirect associations
 
+  has_many   :movies,
+             :through => :characters,
+             :source => :movie
+
   # Validations
 
   validates :name, :uniqueness => { :scope => [:dob] }
