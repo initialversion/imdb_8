@@ -5,6 +5,8 @@ class Movie < ActiveRecord::Base
 
   # Validations
 
+  validates :title, :uniqueness => { :scope => [:year, :director_id] }
+
   validates :title, :presence => true
 
 end
